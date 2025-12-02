@@ -1,0 +1,10 @@
+[
+  {
+    "title": "title",
+    "author": "author",
+    "rating": null,
+    "favorite": false,
+    "description": "base_book",
+    "content": "content"
+  }
+]

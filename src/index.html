@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FicMan</title>
+    <link rel="stylesheet" href = "style.css">
+</head>
+<body>
+        <!-- <a id="log">hello</a> -->
+    <div   class = "header"> 
+<!-- upper left logo -->
+        <div class="logo"> 
+                <svg xmlns="http://www.w3.org/2000/svg" class = "logo-Icon"><line stroke="#db3b00" x1="8" y1="4" x2="8" y2="22"></line>
+                    <line stroke="#ff6600" x1="4" y1="20" x2="10" y2="20"></line><line stroke="#ff6600" x1="4" y1="15" x2="10" y2="15"></line>
+                    <line stroke="#ff6600" x1="6" y1="10" x2="12" y2="10"></line><line stroke="#ff6600" x1="10" y1="5" x2="16" y2="5"></line></svg>
+                </div>
+<!-- header with all the dropdown menues -->
+        <button class="titleBtn btnFloatLeft titleBtn-grey"> 
+                <a class="titleMenus">File</a>
+        </button>
+        <button class="titleBtn btnFloatLeft titleBtn-grey"> 
+                <a class="titleMenus">Edit</a>
+        </button>
+        <button class="titleBtn btnFloatLeft titleBtn-grey"> 
+                <a class="titleMenus">View</a>
+        </button>
+        <button class="titleBtn btnFloatLeft titleBtn-grey"> 
+                <a class="titleMenus">Window</a>
+        </button>
+        <button class="titleBtn btnFloatLeft titleBtn-grey"> 
+                <a class="titleMenus">Help</a>
+        </button>
+
+
+<!-- right hand side, quit, minimize etc, -->
+        <button id="quitBtn"  class="titleBtn btnFloatRight titleBtn-orange"> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="titleMenu" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <button id="minMax" class="titleBtn btnFloatRight titleBtn-grey"> 
+                <svg id="maxSquare" visibility="visible" xmlns="http://www.w3.org/2000/svg" class="titleMenu" class="feather feather-square"><rect x="5" y="5" width="14" height="14" rx="2" ry="2"/></svg>
+                <svg id="minArrows" visibility="hidden" xmlns="http://www.w3.org/2000/svg" width="0" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize-2">
+                        <polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+        <button  id = "minusBtn" class="titleBtn btnFloatRight titleBtn-grey"> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="titleMenu" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+    </div>
+<!-- side bar menu -->
+    <div class="sidebar">
+        
+        <button onclick=sidebarFile() id="sidebarBtn" class="sidebarBtn"> 
+                <div id="sidebarIcon_File" style="background-color: #242424;" class="selectedSidebar" ></div>
+            <div class="Menu-DropdownBtn-Div" style="display: inline-block;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="sidebarIcon"  class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+             </div>
+        </button>
+        <button onclick=sidebarFolder() id="sidebarBtnFolder" class="sidebarBtn"> 
+                <div id="sidebarIcon_Folder"   style="background-color: #242424;"  class="selectedSidebar"></div>
+             <div class="Menu-DropdownBtn-Div" style="display: inline-block;">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="sidebarIcon"  class = "feather feather-minus" ><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+             </div>
+        </button>
+        <button onclick=sidebarFilter() id="sidebarBtn" class="sidebarBtn"> 
+                <div id="sidebarIcon_Filter"   style="background-color: #242424;" class="selectedSidebar"></div>
+                <div class="Menu-DropdownBtn-Div" style="display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="sidebarIcon"  class="feather feather-settings"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                </div>
+        </button>
+        <button onclick=sidebarSearch() id="sidebarBtn" class="sidebarBtn"> 
+                <div id="sidebarIcon_Search" style="background-color: #242424;" class="selectedSidebar" ></div>
+                <div class="Menu-DropdownBtn-Div" style="display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="sidebarIcon" class="feather feather-settings"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+        </button>
+        <button onclick=sidebarSettings() id="sidebarBtn" class="sidebarBtn"> 
+                <div id="sidebarIcon_Settings" style="background-color: #242424;"  class="selectedSidebar"></div>
+                <div class="Menu-DropdownBtn-Div" style="display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="sidebarIcon"  class="feather feather-settings"><circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83
+                                 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 
+                                 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+        </button>
+        <button onclick=sidebarAdd() id="sidebarBtn" class="sidebarBtn"> 
+                <div id="sidebarIcon_Add" style="background-color: #242424;"  class="selectedSidebar"></div>
+                <div class="Menu-DropdownBtn-Div" style="display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="sidebarIcon" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </div>
+        </button>
+    </div>
+<!-- above is the sidebar with just the icons 
+ 
+below is the sidebar that actually moves and has the buttons
+-->
+
+    <div id="movingSidebar" class="movingSidebar" style="margin-left: -100%;">
+        <!-- 
+        
+        this is the manager for the current open file
+         
+        -->
+        <div class="sidebarFile" id="sidebarFile">
+                        <div class="ficTitleMenu">
+                                <div class="singleLineDiv">
+                                        <p style="float: left; color: #b3b3b3; margin-left: 8px; font-size: 16px; margin-top:2px; margin-bottom: 0px;">Current Story</p>
+                                        <Button class="actionBtn_File" style="height: 24px; float: right;"><svg xmlns="http://www.w3.org/2000/svg"  class="movingSidebarIcon_File"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></Button>  
+                                </div>                                        
+                                <div class="multiLineDiv">
+                                        <a style=" display: block; color: #b3b3b3; margin-left: 8px; font-size: 24px; margin-top:4px; margin-bottom:0px;">title</a>
+                                        <a style=" display: block; color: #b3b3b3; margin-left: 8px; font-size: 16px; margin-top:4px; margin-bottom:6px">author</a>
+                                </div>
+                                <div class="singleLineDiv">
+                                        <button onclick=starRate(1) onmouseover=starHover(1) onmouseleave=starLeave(1) class="actionBtn_File" style="height: 24px; padding-left: 1px; padding-right: 1px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="star-1" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </button>                   
+                                        <button onclick=starRate(2) onmouseover=starHover(2) onmouseleave=starLeave(2) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg"  id="star-2" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </button>           
+                                        <button onclick=starRate(3) onmouseover=starHover(3) onmouseleave=starLeave(3) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg"  id="star-3" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </button>   
+                                        <button onclick=starRate(4) onmouseover=starHover(4) onmouseleave=starLeave(4) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg"  id="star-4" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </button>   
+                                        <button onclick=starRate(5) onmouseover=starHover(5) onmouseleave=starLeave(5) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg"  id="star-5" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                        </button>   
+                                        
+                                        <button onclick=favorite() onmouseover=favoriteHover() onmouseleave=favoriteLeave() class="actionBtn_File" style="height: 24px; float: right;" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="favorite" style="float: right;" class="movingSidebarIcon_File" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>            
+                                        </button>
+                                </div>
+
+                        </div>
+        </div>
+
+        <!-- 
+        
+        this is the file manager
+        
+        
+        -->
+        <div>
+            <div class="sidebarFolder" id="sidebarFolder" >
+                <div class="singleLineDiv">
+                    <p  class="text1"> File View</p>
+                </div>
+                <div class="manualEntrees-container" id="accessed_div">
+
+                </div>
+            </div>
+        
+
+        </div>
+        <!-- 
+        widely undeveloped
+        -->
+        <div class="sidebarFilter" id="sidebarFilter" style="float: left; color: #b3b3b3; margin-left: 8px; font-size: 16px; margin-top:2px; margin-bottom: 0px;">filter</div>
+        <div class="sidebarSearch" id="sidebarSearch" style="float: left; color: #b3b3b3; margin-left: 8px; font-size: 16px; margin-top:2px; margin-bottom: 0px;">search</div>
+        <div class="sidebarSettings" id="sidebarSettings" style="float: left; color: #b3b3b3; margin-left: 8px; font-size: 16px; margin-top:2px; margin-bottom: 0px;">settings</div>
+
+
+        <!-- 
+        
+this is the menu that is used to add books to the data.json file
+
+        -->
+        <div  class="sidebarAdd" id="sidebarAdd">
+                <div class="addDocumentDiv">
+                        <button onclick=addFromHTML() class="addDocumentBtn" style="float: center; text-align:center;">Upload From Html</button>
+                </div>
+                <div  class="addDocumentDiv" >
+                        <button onclick=addManual() class="addDocumentBtn" style="text-align:center; " >Manual Creation</button>
+                </div>
+                <div  class="manualEntrees-container" >
+                        <div  class="manualEntrees" >
+                                <div contenteditable="true" id="title" class="manualEntreesSpan">Title</div>
+                        </div>
+                        <div  class="manualEntrees" >
+                                <div contenteditable="true"  id="author" class="manualEntreesSpan">Author</div>
+                        </div>
+                        <div class="singleLineDiv" style="background-color: #383838;">
+                                <button onclick=manualStarRate(1) onmouseover=manualStarHover(1) onmouseleave=manualStarLeave(1) class="actionBtn_File" style="height: 24px; padding-left: 1px; padding-right: 1px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="manualStar-1" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </button>                   
+                                <button onclick=manualStarRate(2) onmouseover=manualStarHover(2) onmouseleave=manualStarLeave(2) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  id="manualStar-2" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </button>           
+                                <button onclick=manualStarRate(3) onmouseover=manualStarHover(3) onmouseleave=manualStarLeave(3) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  id="manualStar-3" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </button>   
+                                <button onclick=manualStarRate(4) onmouseover=manualStarHover(4) onmouseleave=manualStarLeave(4) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  id="manualStar-4" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </button>   
+                                <button onclick=manualStarRate(5) onmouseover=manualStarHover(5) onmouseleave=manualStarLeave(5) class="actionBtn_File" style="height: 24px;  padding-left: 1px; padding-right: 1px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  id="manualStar-5" class="movingSidebarIcon_File" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </button>   
+                                
+                                <button onclick=manualFavorite() onmouseover=manualFavoriteHover() onmouseleave=manualFavoriteLeave() class="actionBtn_File" style="height: 24px; float: right;" >
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="manualFavorite" style="float: right;" class="movingSidebarIcon_File" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>            
+                                </button>
+                        </div>
+                        <div  class="manualEntrees" >
+                                <div contenteditable="true"  id="description" class="manualEntreesSpan">Description</div>
+                        </div>
+                        <div  class="manualEntrees" >
+                                <div contenteditable="true"  id="content" class="manualEntreesSpan">Content</div>
+                        </div>
+                </div>
+        </div>    
+
+    </div>
+    
+</body>
+<script src="script.js"></script>
+<script src="file_managment.js"></script>
+</html>

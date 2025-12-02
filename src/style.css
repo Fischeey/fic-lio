@@ -1,0 +1,277 @@
+/*  */
+/* header section */
+.header{
+    position:sticky;
+    z-index: 10;
+    background-color: #242424;
+    width: 100%;
+    height: 36px;
+    border-bottom: solid 1px grey;
+    -webkit-app-region: drag;
+}
+/* header buttons */
+.titleBtn{
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #b3b3b3;
+    /* margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px; */
+    background-color: transparent;
+    height: 36px;
+    border: none;
+    outline: none;
+    -webkit-app-region: no-drag;
+}
+.btnFloatLeft{
+    float: left;
+}
+.btnFloatRight{
+    float: right;
+}
+.titleBtn-grey:hover{
+    background-color: #616161;
+    color: #ffffff;
+    transition: .2s;
+}
+.titleBtn-orange:hover{
+    background-color: #ff6600;
+    color: #ffffff;
+    transition: .2s;
+}
+
+
+.titleMenu{
+    float: left;
+
+    width: 24px;
+    height: 24px  ;
+    fill: transparent;
+    fill: "none"  ;
+    stroke-width:2; 
+    stroke: currentColor;
+    stroke-linecap:round; 
+    stroke-linejoin: round; 
+}
+/* end header buttons */
+/* logo */
+.logo-Icon{
+    float: left;
+    padding-left: 4px;
+    margin: 6px;
+    width: 24px;
+    height: 24px  ;
+    /* viewBox: "0 0 24 24" ; */
+    fill: "none"  ;
+    stroke-width:2; 
+    stroke-linecap:round; 
+    stroke-linejoin: round; 
+}
+
+
+
+
+
+/* end logo */
+/* moving sidebar */
+.movingSidebar{
+    padding-left: 36px;
+    position:fixed;
+    z-index: 6;
+    background-color: #242424;
+    max-width: 400px;
+    width: 40%;
+    height: 100%;
+    border-right: solid 1px grey;
+    transition-duration: 1s;
+}
+
+.singleLineDiv{
+    width: 100%;
+    height: 24px;
+    background-color: #242424;
+    border-bottom: solid 1px grey;
+    border-top: solid 1px grey;
+    border-radius: 10px;
+}
+.multiLineDiv{
+    width: 100%;
+    height: 100%;
+
+    background-color: #242424;
+    border-bottom: solid 1px grey;
+    border-top: solid 1px grey;
+    border-radius: 10px;
+}
+
+
+/* File Tab */
+.text1{
+    float: left; 
+    color: #b3b3b3;
+     margin-left: 8px; 
+     font-size: 16px; 
+     margin-top:2px; 
+     margin-bottom: 0px;
+}
+
+.movingSidebarIcon_File{
+    width:20px;
+    height:20px;
+    /* viewBox:0 0 24 24; */
+    fill:none;
+    stroke: #b3b3b3;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    margin: 2px;
+}
+
+.actionBtn_File{
+    color: #b3b3b3;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.actionBtn_File:hover{
+    background-color: #616161;
+    color: #ffffff;
+    transition: .2s;
+}
+
+/* folder tab */
+.fileList{
+    float: left; 
+    color: #b3b3b3; 
+    margin-left: 8px; 
+    font-size: 16px; 
+    margin-top:2px; 
+    margin-bottom: 0px;
+}
+
+
+
+
+/* stable sidebar */
+.sidebar{
+    position:fixed;
+    z-index: 8;
+    background-color: #242424;
+    width: 36px;
+    height: 100%;
+    border-right: solid 1px grey;
+}
+.sidebarIcon{
+    margin-top: 5px;
+    margin-left: 4px;
+    width:28px;
+    height:24px;
+    /* viewBox:0 0 24 24; */
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+.sidebarBtn{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+    color: #b3b3b3;
+    /* margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px; */
+    background-color: transparent;
+    height: 36px;
+    border: none;
+    outline: none;
+    -webkit-app-region: no-drag;
+}
+
+.sidebarBtn:hover{
+    background-color: #616161;
+    color: #ffffff;
+    transition: .2s;
+}
+.selectedSidebar{
+    padding-top: 0px;
+    float: left;
+    background-color: #ff6600;
+    width: 2px;
+    height: 36px;
+}
+
+/* seperate */
+body{
+    height: 100%;
+    background-color: #333333;
+    margin: 0;
+}
+
+
+
+
+
+
+
+.addDocumentBtn{
+    float: left; 
+    color: #b3b3b3; 
+    text-align: left;
+    font-size: 12px; 
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    height: 22px;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.addDocumentDiv{
+    width: 100%;
+    height: 24px;
+    background-color: #242424;
+    border-bottom: solid 1px grey;
+}
+.addDocumentDiv:hover{
+    background-color: #616161;
+    color: #ffffff;
+    transition: .2s;
+}
+
+
+.manualEntrees{
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 1px grey;
+}
+.manualEntreesSpan{
+    display: inline-block;
+    width: 320px;
+    color:#b3b3b3;
+    outline: 0px solid transparent;
+    font-size: 16px;
+    height: 20px;
+    padding-top: 2px;
+}
+.manualEntrees-container{
+    background-color: #383838;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

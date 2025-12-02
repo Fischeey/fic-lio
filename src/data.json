@@ -1,0 +1,33 @@
+[
+  {
+    "title": "title",
+    "author": "author",
+    "rating": null,
+    "favorite": false,
+    "description": "base_book",
+    "content": "content"
+  },
+  {
+    "title": "Titleasd",
+    "author": "Authorf",
+    "rating": 4,
+    "favorite": false,
+    "description": "Descriptiona",
+    "content": "Contentf"
+  },
+  {
+    "title": "Titleb",
+    "author": "Authorbv",
+    "favorite": false,
+    "description": "Descriptionbv",
+    "content": "Contentcb"
+  },
+  {
+    "title": "Titleb",
+    "author": "Authorbv",
+    "rating": 3,
+    "favorite": false,
+    "description": "Descriptionbv",
+    "content": "Contentcb"
+  }
+]
