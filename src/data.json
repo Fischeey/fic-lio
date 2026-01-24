@@ -18,8 +18,8 @@
     "favorite": false,
     "description": "collection of images from calvin and hobbes",
     "tags": [],
-    "page": 4,
-    "max-page": 4,
+    "page": 6,
+    "max-page": 6,
     "path": "./Local/calvin and hobbes/",
     "images": true
   },
@@ -30,8 +30,8 @@
     "favorite": false,
     "description": "sample images",
     "tags": [],
-    "page": 1,
-    "max-page": 7,
+    "page": 3,
+    "max-page": 3,
     "path": "./Local/bobby make belive/",
     "images": true
   }

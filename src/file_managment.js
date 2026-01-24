@@ -480,6 +480,18 @@ document.getElementById("OpenFileButton").addEventListener('click',() =>{
 //     }
 // }
 function openFile(title, loc) {
+    if (loc == 0) {
+        data=JSON.parse(fs.readFileSync("./src/data.json", 'utf-8'))
+        //console.log("run increase page")
+        data.forEach(e => {
+            if(e.title == title){
+                e.page =0
+                //console.log(e.page)
+            }
+        });
+    
+        fs.writeFileSync("./src/data.json", JSON.stringify(data, null, 2));
+    }
     document.getElementById("imageSection").style.display = "none"
     document.getElementById("textSection").style.display = "none"
 
@@ -499,12 +511,60 @@ function openFile(title, loc) {
         document.getElementById("textSection").style.display = "inline-block"
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementById("previousimageButton").addEventListener('click',() =>{
     title = document.getElementById("titleSecondSidebar").innerHTML
+    console.log("run previous image" + title)
+    page = getBookData(title, "page")
+    
 
-    decreasePage()
-    openFile()
+    if (page == false) {
+        page = 0
+    } 
+    // else if(page == true){
+    //     maxPage = 1
+    // }
+
+    console.log(page)
+
+    if (page -1 >= 0) {
+        console.log("next page available")
+        decreasePage(title)
+        
+        openFile(title, page-1)
+    }
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementById("nextimageButton").addEventListener('click',() =>{
     title = document.getElementById("titleSecondSidebar").innerHTML
     console.log("run next image" + title)
@@ -514,15 +574,15 @@ document.getElementById("nextimageButton").addEventListener('click',() =>{
     if (page == false) {
         page = 0
     } 
-    else if(page == true){
-        maxPage = 1
-    }
+    // else if(page == true){
+    //     maxPage = 1
+    // }
     if (maxPage == false) {
         maxPage = 0
     } 
-    else if(maxPage==true){
-        maxPage = 1
-    }
+    // else if(maxPage==true){
+    //     maxPage = 1
+    // }
 
     console.log(page)
     console.log(maxPage)

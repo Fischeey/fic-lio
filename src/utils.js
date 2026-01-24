@@ -157,11 +157,11 @@ function getBookData(title, dataname) {
 }
 function increasePage(title) {
     data=JSON.parse(fs.readFileSync("./src/data.json", 'utf-8'))
-    console.log("run increase page")
+    //console.log("run increase page")
     data.forEach(e => {
         if(e.title == title){
             e.page += 1
-            console.log(e.page)
+            //console.log(e.page)
         }
     });
     
@@ -169,11 +169,11 @@ function increasePage(title) {
 }
 function decreasePage(title) {
     data=JSON.parse(fs.readFileSync("./src/data.json", 'utf-8'))
-    console.log("run decrease page")
+    //console.log("run decrease page")
     data.forEach(e => {
         if(e.title == title){
             e.page -= 1
-            console.log(e.page)
+            //console.log(e.page)
         }
     });
     

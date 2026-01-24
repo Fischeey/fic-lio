@@ -438,3 +438,9 @@ body{
     stroke-linejoin: round;
      
 }
+
+
+.bodyImage{
+    width: 256px;
+    height: 256px;
+}
