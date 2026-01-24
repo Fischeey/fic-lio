@@ -31,7 +31,6 @@ const createWindow = () => {
   ipc.on('minus', ()=>{
     win.minimize();
   })
-
 }
 
 try {

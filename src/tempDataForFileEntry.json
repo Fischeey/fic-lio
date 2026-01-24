@@ -5,34 +5,18 @@
     "rating": null,
     "favorite": false,
     "description": "base_book",
-    "tags": [],
-    "page": 0,
-    "max-page": 0,
+    "content": "content",
     "path": "path",
     "images": false
   },
   {
     "title": "calvin and hobbes",
     "author": "guy who made calvin and hobbes",
-    "rating": "5",
+    "rating": 0,
     "favorite": false,
     "description": "collection of images from calvin and hobbes",
-    "tags": [],
-    "page": 4,
-    "max-page": 4,
+    "content": null,
     "path": "./Local/calvin and hobbes/",
-    "images": true
-  },
-  {
-    "title": "bobby make belive",
-    "author": "unknown",
-    "rating": "3",
-    "favorite": false,
-    "description": "sample images",
-    "tags": [],
-    "page": 1,
-    "max-page": 7,
-    "path": "./Local/bobby make belive/",
     "images": true
   }
 ]

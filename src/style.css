@@ -1,6 +1,14 @@
 /*  */
 /* header section */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+
 .header{
+    top: 0; 
     position:sticky;
     z-index: 10;
     background-color: #242424;
@@ -70,7 +78,15 @@
 }
 
 
-
+.singleLineDiv_files{
+    width: 100%;
+    height: 24px;
+    /* color: red; */
+    background-color: #242424;
+    border-bottom: solid 1px grey;
+    border-top: solid 1px grey;
+    /* border-radius: 10px; */
+}
 
 
 /* end logo */
@@ -93,7 +109,7 @@
     background-color: #242424;
     border-bottom: solid 1px grey;
     border-top: solid 1px grey;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .multiLineDiv{
     width: 100%;
@@ -102,7 +118,7 @@
     background-color: #242424;
     border-bottom: solid 1px grey;
     border-top: solid 1px grey;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 
@@ -205,9 +221,17 @@
 
 /* seperate */
 body{
-    height: 100%;
+    height: calc(100% - 37px);
+    
     background-color: #333333;
     margin: 0;
+}
+.main_body{
+    overflow-y: auto;
+    height: 100%;
+    background-color: #333333;
+    margin-left: 37px;
+    transition: 1s;
 }
 
 
@@ -275,3 +299,142 @@ body{
 
 
 
+
+
+
+/* input[type="file"] {
+  display: none;
+} */
+
+.custom-file-upload {
+    margin: 4px;
+  color:#b3b3b3;
+  display: inline-block;
+  cursor: pointer;
+}
+::-webkit-file-upload-button,
+::file-selector-button {
+  display: none;
+}
+.picker{
+    width: 100px;
+    height: 24px;
+    border-left: solid 1px grey;
+    float: right;
+    color:#b3b3b3;
+}
+.pickerDiv{
+
+    height: 24px;
+    border-left: solid 1px grey;
+    width: 160px;
+    float: right;
+    color:#b3b3b3;
+}
+.fileCheckMark{
+    margin: 0;
+    width: 24px;
+    height: 22px;
+    float:right;
+    border-left: solid 1px grey;
+}
+.fileTrashButton{
+    margin: 0;
+    height: 22px;
+    width: 24px;
+    float:right;
+    border-left: solid 1px grey;
+}
+
+
+
+
+
+.fileTreeIcon{
+    display: none;
+    z-index:15;
+    color: white;
+    margin-right: 8px;
+    padding-top: 0px;
+    vertical-align:middle
+}
+
+.fileTreeGen{
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+.fileTreeDiv{
+    padding-left: 8px;
+    margin-left: 8px;
+    border-left: solid 1px white;
+}
+.fileTreeText{
+    display: inline-block;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+
+
+
+
+
+.fileSidebar{
+    margin-left: -100%;
+    /* padding-left: 36px; */
+    position:fixed;
+    z-index: 6;
+    background-color: #242424;
+    max-width: 400px;
+    width: 40%;
+    height: 100%;
+    border-right: solid 1px grey;
+    transition-duration: 1s;
+}
+
+
+
+
+.imageSection{
+    height: 100%;
+    width: 100%;
+}
+.imageSectionBottomDiv{
+    margin-left: 0px;
+    width: calc(100% - 37px);
+    background-color: #242424;
+    border-top: solid 1px grey;
+    top: calc(100% - 36px);
+    height: 36px;
+    position: absolute;
+}
+.imageSectionBottomText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+.pageButton{
+    margin: 4px;
+    border: solid 1px grey;
+    border-radius: 8px;
+    display: inline-block;
+    height: 24px;
+    width: 64px;
+    background-color: #616161;
+}
+
+.next_previousArrows{
+    width: 20px;
+    height: 20px;
+   
+    fill: none;
+    stroke: #242424;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+     
+}

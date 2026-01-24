@@ -77,11 +77,16 @@ function clearSidebar() {
 }
 function sidebarOut() {
         document.getElementById("movingSidebar").style.marginLeft="0";
+
+        document.getElementById("main_body").style.marginLeft = "min(calc(40% + 37px), 440px)";
+
         sidebarIsOut = true;
 }
 function sidebarClose() {
 
     document.getElementById("movingSidebar").style.marginLeft="-100%";
+    document.getElementById("main_body").style.marginLeft = "37px"
+    document.getElementById("fileSidebar").style.marginLeft="-100%"
     sidebarIsOut = false;
 }
 function sidebarFile() {
@@ -252,3 +257,20 @@ function manualFavoriteHover() {
 function manualFavoriteLeave(params) {
     document.getElementById("manualFavorite").style.stroke = "#b3b3b3";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
